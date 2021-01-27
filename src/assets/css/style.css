@@ -81,9 +81,10 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: 'Source Sans Pro', sans-serif;
+    background: #000000;
     letter-spacing: 0px;
     font-size: 17px;
-    color: #6d767a;
+    color: #ffffff;
     font-weight: 400;
     line-height: 34px;
 }
@@ -94,7 +95,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #161f23;
+    color: #ffd700;
     margin: 0px 0px 15px 0px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 700;
@@ -159,7 +160,7 @@ sub {
     font-weight: 400;
     line-height: 1.6;
     font-family: 'Source Sans Pro', sans-serif;
-    color: #011c28;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -1424,7 +1425,7 @@ img.grayscale:hover {
 }
 
 .header-collapse {
-    background-color: #013953;
+    background-color: #000000;
 }
 
 .logo {
@@ -1764,8 +1765,8 @@ img.grayscale:hover {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    background-color: #316888;
-    border: 1px solid #316888;
+    background-color: #ababab;
+    border: 1px solid #ababab;
 }
 
 #navigation.small-screen #menu-button:after {
@@ -2219,11 +2220,11 @@ img.grayscale:hover {
 .counter-title {
     font-size: 48px;
     font-weight: 800;
-    color: #277eb3;
+    color: #ffd700;
 }
 
 .counter-text {
-    color: #202224;
+    color: #ffffff;
     font-size: 21px;
 }
 

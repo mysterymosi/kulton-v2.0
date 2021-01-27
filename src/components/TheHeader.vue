@@ -37,6 +37,16 @@
                 </div>
             </div>
         </div>
+        <VueInjectJs src="/js/menumaker.js" />
     </div>
     <!-- /. header-section-->
 </template>
+
+<script>
+import VueInjectJs from "vue-inject-js"
+export default {
+	components: {
+		VueInjectJs
+	}
+}
+</script>

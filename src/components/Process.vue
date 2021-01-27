@@ -52,3 +52,16 @@
     </div>
     <!--/. Process Step -->
 </template>
+
+<style scoped>
+.space-medium {
+	background-color: #ffffff;
+}
+
+h2, h3 {
+	color: #161f23;
+}
+p {
+	color: #6d767a
+}
+</style>
