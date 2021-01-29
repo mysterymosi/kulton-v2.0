@@ -35,12 +35,29 @@
                                     <div class="post-content text-center">
                                         <h2 class="post-title"><a href="#" class="title">Daily Investment Packages</a></h2>
                                         <div class="meta">
-                                            <span class="meta-date meta-divider">Bronze</span>
-                                            <span class="meta-admin meta-divider">Silver></span>
+                                            <span class="meta-comments">Bronze</span>
+                                        </div>
+                                        <p>Minimum Investment 0f $2500</p>
+                                        <p>Maximum Investment 0f $4999</p>
+                                        <p>RETURNS 1%</p>
+                                        <p>REFERRAL BONUS 5%</p>
+                                        <hr>
+                                        <div class="meta">
+                                            <span class="meta-comments">Silver</span>
+                                        </div>
+                                        <p>Minimum Investment 0f $5000</p>
+                                        <p>Maximum Investment 0f $9999</p>
+                                        <p>RETURNS 2%</p>
+                                        <p>REFERRAL BONUS 7%</p>
+                                        <hr>
+                                        <div class="meta">
                                             <span class="meta-comments">Gold</span>
                                         </div>
-                                        <p class="mb30">Get up to 2% ROI daily and 10% referral bonus for an estimated number of days.</p>
-                                        <a href="#" class="btn btn-default">Get Started</a>
+                                        <p>Minimum Investment 0f $10000</p>
+                                        <p>Maximum Investment 0f $19999</p>
+                                        <p>RETURNS 2%</p>
+                                        <p>REFERRAL BONUS 10%</p>
+                                        <router-link to="/investment-packages/1" class="btn btn-default">Get Started</router-link>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +69,7 @@
                         </div> -->
                             <!-- /.post block -->
                         </div>
-                        <hr>
+                        <!-- <hr> -->
                         <div class="row">
                             <!-- post block -->
                             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 mx-auto">
@@ -164,6 +181,26 @@ export default {
     components: {
         TheHeader,
         TheFooter
-    }
+    },
+    beforeMount() {
+        this.$store.dispatch("subscription/getInvestmentPackages");
+    },
+
+    computed: {
+        packages() {
+            return this.$store.getters["subscription/getPackages"];
+        },
+
+        btcAddress() {
+            return this.$store.getters["subscription/getBtcAddress"];
+        }
+    },
 };
 </script>
+
+<style scoped>
+hr {
+    width: 160px !important;
+    border-top: 2px solid #ff9f2a !important;
+}
+</style>

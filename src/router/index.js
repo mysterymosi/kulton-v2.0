@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import UserProfile from "@/components/UserProfile.vue";
+import User from "@/components/User.vue";
 
 Vue.use(VueRouter);
 
@@ -24,6 +26,12 @@ const routes = [
     name: "InvestmentPackages",
     component: () =>
       import(/* webpackChunkName: "investment" */ "../views/InvestmentPackages.vue")
+  },
+  {
+    path: "/investment-packages/:id",
+    name: "SinglePackage",
+    component: () =>
+      import(/* webpackChunkName: "single-package" */ "../views/SinglePackage.vue")
   },
   {
     path: "/testimonies",
@@ -54,6 +62,28 @@ const routes = [
     name: "Signup",
     component: () =>
       import(/* webpackChunkName: "signup" */ "../views/Signup.vue")
+  },
+  {
+    path: "/user-wallet",
+    name: "UserWallet",
+    component: () =>
+      import(/* webpackChunkName: "user-wallet" */ "../views/UserWallet.vue"),
+      children: [
+        {
+          path: "user/profile",
+          component: UserProfile
+        },
+        {
+          path: "user",
+          component: User
+        }
+      ]
+  },
+  {
+    path: "/cryptocurrency-list",
+    name: "CryptoCurrency",
+    component: () =>
+      import(/* webpackChunkName: "cryptocurrency-list" */ "../views/CryptocurrencyList.vue")
   }
 ];
 

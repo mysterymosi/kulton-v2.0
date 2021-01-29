@@ -64,7 +64,7 @@
             <div class="row ">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
                     <div class="tiny-footer">
-                        <p>Copyright © All Rights Reserved 2020 | Template Design & Development by <a href="https://easetemplate.com/ " target="_blank" class="copyrightlink">EaseTemplate</a></p>
+                        <p>Copyright © All Rights Reserved 2020 | Luna Alliance Investments</p>
                     </div>
                 </div>
                 <!-- /. tiny-footer -->
