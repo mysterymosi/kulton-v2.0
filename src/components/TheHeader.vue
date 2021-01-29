@@ -16,7 +16,7 @@
                                 <li class="active"><router-link to="/Investment-packages">Investment Packages</router-link></li>
                                 <li class="active"><router-link to="/cryptocurrency-list">Cryptocurrency</router-link></li>
                                 <li class="active"><router-link to="/testimonies">Testimonies</router-link></li>
-                                <li class="active"><router-link to="faqs">FAQS</router-link></li>
+                                <li class="active"><router-link to="/faqs">FAQS</router-link></li>
                                 <li class="active"><router-link to="contact">Contact</router-link></li>
                               
                                 <!-- <li class="has-sub"><a href="#">Blog</a>

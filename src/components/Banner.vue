@@ -12,7 +12,7 @@
                         <div class="hero-block">
                             <h1 class="hero-title mb30">Create A Timely Passive Income</h1>
                             <p class="text-white">Trade CFDs on Shares, Indices, Forex, Binary and Cryptocurrencies.</p>
-                            <a href="#" class="btn btn-default btn-lg">Get Started</a>
+                            <router-link to="/user-wallet/user" class="btn btn-default btn-lg">Get Started</router-link>
                         </div>
                         <!--  /.hero-block-->
                     </div>
