@@ -69,3 +69,11 @@
     </div>
     <!-- /.about -->
 </template>
+
+<style scoped>
+@media (max-width: 500px) {
+    .section-title {
+        margin-top: 30px;
+    }
+}
+</style>
