@@ -1,4 +1,6 @@
 import Vue from "vue";
+import store from "@/store/modules/user";
+import _ from "lodash";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import UserProfile from "@/components/UserProfile.vue";
@@ -36,7 +38,8 @@ const routes = [
     path: "/investment-packages/:id",
     name: "SinglePackage",
     component: () =>
-      import(/* webpackChunkName: "single-package" */ "../views/SinglePackage.vue")
+      import(/* webpackChunkName: "single-package" */ "../views/SinglePackage.vue"),
+    meta: { requiresAuth: true }
   },
   {
     path: "/testimonies",
@@ -60,7 +63,8 @@ const routes = [
     path: "/login",
     name: "Login",
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Login.vue")
+      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
+    meta: { isLoggedIn: true }
   },
   {
     path: "/signup",
@@ -82,7 +86,8 @@ const routes = [
           path: "user",
           component: User
         }
-      ]
+      ],
+      meta: { requiresAuth: true }
   },
   {
     path: "/cryptocurrency-list",
@@ -116,7 +121,8 @@ const routes = [
         path: "create-btc-address",
         component: CreateBtcAddress
       }
-    ]
+    ],
+    meta: { requiresAuth: true, isAdmin: true }
   }
 ];
 
@@ -124,6 +130,46 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    console.log("profile: ", _.isEmpty(store.state.profile));
+    if(_.isEmpty(JSON.parse(localStorage.getItem("user")))) {
+      next({
+        name: "Login"
+      })
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+
+  if (to.matched.some(record => record.meta.isLoggedIn)) {
+    if (_.isEmpty(JSON.parse(localStorage.getItem("user")))===false) {
+      next({
+        name: "Home"
+      })
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+
+  if (to.matched.some(record => record.meta.isAdmin)) {
+    if (_.isEmpty(JSON.parse(localStorage.getItem("user")))=== false && JSON.parse(localStorage.getItem("user")).role !== 0) {
+      next()
+    } else {
+      console.log("role: ", JSON.parse(localStorage.getItem("user")).role)
+      next({
+        name: "Home"
+      });
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;

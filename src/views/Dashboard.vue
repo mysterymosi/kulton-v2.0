@@ -1,9 +1,9 @@
 <template>
 	<div>
 		<span id="navigation" style="display: none;"></span>
-		<div id="preloader">
+		<!-- <div id="preloader">
 			<div class="loader"></div>
-		</div>
+		</div> -->
 		<div class="page-container">
 			<TheSidebar />
 			<div class="main-content">
