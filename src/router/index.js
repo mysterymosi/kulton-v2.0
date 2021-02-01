@@ -3,6 +3,11 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import UserProfile from "@/components/UserProfile.vue";
 import User from "@/components/User.vue";
+import UserList from "@/components/Dashboard/UserList.vue";
+import SingleUser from "@/components/Dashboard/SingleUser.vue";
+import UserProfileAdmin from "@/components/Dashboard/UserProfile.vue";
+import UpdateUserWalletForm from "@/components/Dashboard/UpdateUserWalletForm.vue";
+import CreateBtcAddress from "@/components/Dashboard/CreateBtcAddress.vue";
 
 Vue.use(VueRouter);
 
@@ -84,6 +89,34 @@ const routes = [
     name: "CryptoCurrency",
     component: () =>
       import(/* webpackChunkName: "cryptocurrency-list" */ "../views/CryptocurrencyList.vue")
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: () =>
+      import(/* webpackChunkName: "dashboard */ "../views/Dashboard.vue"),
+    children: [
+      {
+        path: "users",
+        component: UserList
+      },
+      {
+        path: "users/:id",
+        component: SingleUser
+      },
+      {
+        path: "users/:id/profile",
+        component: UserProfileAdmin
+      },
+      {
+        path: "users/:id/profile/update-user-wallet",
+        component: UpdateUserWalletForm
+      },
+      {
+        path: "create-btc-address",
+        component: CreateBtcAddress
+      }
+    ]
   }
 ];
 

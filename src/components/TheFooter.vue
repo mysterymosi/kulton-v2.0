@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row ">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                    <div class="ft-logo"><img src="../assets/images/logo.png" alt=""></div>
+                    <div class="ft-logo img-fluid"><img src="../assets/images/lunaralliance-2.png" alt=""></div>
                 </div>
             </div>
             <hr class="footer-line">
@@ -73,3 +73,9 @@
     </div>
     <!-- /.footer -->
 </template>
+
+<style scoped>
+img {
+    width: 100px !important;
+}
+</style>

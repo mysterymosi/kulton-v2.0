@@ -41,7 +41,7 @@ const subscription = {
                     console.log("btc: ", data.data.data.address);
                     console.log("subs data: ", data.data.data.subscription);
                     commit("SET_PACKAGES", data.data.data.subscription);
-                    commit("SET_BTC_ADDRESS", data.data.data.address);
+                    commit("SET_BTC_ADDRESS", data.data.data.btc[0].address);
                 })
                 .catch(err => console.log(err));
         },
@@ -52,7 +52,8 @@ const subscription = {
         			console.log("single package: ", data.data.data.btc[0].address);
         			context.commit("SET_PACKAGE", data.data.data.subscription);
         			context.commit("SET_BTC_ADDRESS", data.data.data.btc[0].address)
-        		});
+        		})
+                .catch(err => console.log(err));
         },
 
         createDeposit(context, payload) {

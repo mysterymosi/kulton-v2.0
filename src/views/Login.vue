@@ -23,7 +23,7 @@
                                 <button @click.prevent="login" type="submit" name="singlebutton" class="btn btn-default btn-lg  btn-block mt20">Sign In</button>
                             </form>
                         </div>
-                        <p class="text-white">Not a member? <router-link to="/signup" class="text-yellow">Sign up</router-link><span class="pull-right"><a href="index.html" class="text-white">Back to Home</a> </span></p>
+                        <p class="text-white">Not a member? <router-link to="/signup" class="text-yellow">Sign up</router-link><span class="pull-right"><router-link to="/" class="text-white">Back to Home</router-link> </span></p>
                     </div>
                     <!-- /.login-form -->
                 </div>
@@ -91,7 +91,4 @@ export default {
 }
 </script>
 <style scoped>
-.pdt100 {
-    height: 100vh;
-}
 </style>
